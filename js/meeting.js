@@ -54,6 +54,7 @@
       leaveUrl: meetingConfig.leaveUrl,
       webEndpoint: meetingConfig.webEndpoint,
       success: function () {
+
         console.log(meetingConfig);
         console.log("signature", signature);
         $.i18n.reload(meetingConfig.lang);
@@ -71,6 +72,23 @@
             ZoomMtg.getCurrentUser({
               success: function (res) {
                 console.log("success getCurrentUser", res.result.currentUser);
+                
+                $(".footer-button__share-icon").hide();
+                $(".footer-button__share-icon").parent().siblings(".footer-button__button-label").hide();
+
+                $(".footer-button__participants-icon").hide();
+                $(".footer-button__participants-icon").parent().siblings(".footer-button__button-label").hide();
+
+                $(".footer-button__chat-icon").hide();
+                $(".footer-button__chat-icon").parent().siblings(".footer-button__button-label").hide();
+
+                $(".more-button__more-icon").hide();
+                $(".more-button__more-icon").parent().siblings(".more-button__button-label").hide();
+
+                $(".send-video-container").hide();
+                $(".zm-icon zm-icon-start-video").hide();
+                
+
               },
             });
           },
